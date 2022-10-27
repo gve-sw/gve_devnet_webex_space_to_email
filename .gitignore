@@ -1,0 +1,10 @@
+# python virtual env
+venv
+
+# environment variables
+settings.py
+
+*.pyc
+
+.DS_Store
+.idea

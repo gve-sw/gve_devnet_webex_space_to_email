@@ -1,0 +1,26 @@
+{% extends "masterPage.html" %}
+
+{% block content %}
+      <!-- STEP 1 : Button that kicks off the flow by sending your user to the following URL along with a standard set of OAuth query parameters, state parameter is hard coded here-->
+      <!-- The scope parameter in the integration is set to spark:all for simplicity in this example, in production this should be fine tuned -->
+      
+      <div class="row">
+            <div class="col-xl-4"></div>
+            <div class="col-xl-4">
+                  <div class="section">
+                        <div class="panel panel--loose panel--raised base-margin-bottom">
+                              <h2 class="subtitle">GRANT INTEGRATION ACCESS</h2>
+                              <hr>
+                              <div class="section">
+                                    <img src="/static/images/webex_logo.png" alt="Webex Logo">
+                                    <br>
+                                    <br>
+                                    <a href='https://webexapis.com/v1/authorize?client_id={{client_id}}&response_type=code&redirect_uri=http%3A%2F%2F0.0.0.0%3A10060%2Foauth&scope=spark%3Akms%20spark%3Arooms_read%20spark%3Amessages_read&state={{state}}'><button class="btn btn--primary">Grant</button></a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-xl-4"></div>
+      </div>
+   
+{% endblock %}

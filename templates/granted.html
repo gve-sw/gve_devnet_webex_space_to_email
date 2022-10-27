@@ -1,0 +1,32 @@
+{% extends "masterPage.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-xl-12">
+          <div class="section">
+                <div class="panel panel--loose panel--raised base-margin-bottom">
+
+                    <div class="panel panel--bordered-bottom">
+                        <h2 class="subtitle">Webhooks</h2>
+                    </div>
+
+                    {% for webhook in webhook_list %}
+                        {% set space = webhook['spaceName'] %}
+                        <div class="panel panel--bordered">
+                            <ul>
+                                <li><span style="color:#00bceb">Space Name:</span> {{space}}</li>
+                                <li><span style="color:#00bceb">Emails:</span> {{emails[space]}}</li>
+                                <li><span style="color:#00bceb">Webhook ID:</span> {{webhook['id']}}</li>
+                                <li><span style="color:#00bceb">Target URL:</span> {{webhook['targetUrl']}}</li>
+                                <li><span style="color:#00bceb">Status:</span> {{webhook['status']}}</li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+          </div>
+    </div>
+</div>
+
+
+{% endblock %}
